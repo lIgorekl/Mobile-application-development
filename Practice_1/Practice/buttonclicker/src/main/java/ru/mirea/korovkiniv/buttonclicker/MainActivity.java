@@ -33,4 +33,13 @@ public class MainActivity extends AppCompatActivity {
         tv.setText("It is not me");
         checkBox.setChecked(false);
     }
+
+    public void onItIsMeClick(View view) {
+
+        TextView tv = findViewById(R.id.tvOut);
+        CheckBox checkBox = findViewById(R.id.checkBox);
+
+        tv.setText("I`m a student at MIREA");
+        checkBox.setChecked(true);
+    }
 }
