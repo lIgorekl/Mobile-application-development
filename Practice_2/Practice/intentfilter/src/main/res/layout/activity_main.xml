@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/buttonBrowser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Открыть сайт"
+        android:onClick="onClickOpenBrowser"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/buttonShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Отправить ФИО"
+        android:onClick="onClickShare"
+
+        app:layout_constraintTop_toBottomOf="@id/buttonBrowser"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <Button
+        android:id="@+id/buttonToast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Показать Toast"
+        android:onClick="onClickToast"
+
+        app:layout_constraintTop_toBottomOf="@id/buttonShare"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <Button
+        android:id="@+id/buttonDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Показать диалог"
+        android:onClick="onClickDialog"
+
+        app:layout_constraintTop_toBottomOf="@id/buttonToast"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
