@@ -42,6 +42,9 @@ public class MainActivity extends AppCompatActivity {
                 } else if (item.getItemId() == R.id.nav_web) {
                     selectedFragment = new WebViewFragment();
                 }
+                else if (item.getItemId() == R.id.nav_hardware) {
+                    selectedFragment = new HardwareFragment();
+                }
 
                 if (selectedFragment != null) {
                     getSupportFragmentManager().beginTransaction()
