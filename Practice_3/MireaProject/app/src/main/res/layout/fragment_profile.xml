@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <EditText
+            android:id="@+id/editName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Имя"/>
+
+        <EditText
+            android:id="@+id/editAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Возраст"
+            android:inputType="number"/>
+
+        <EditText
+            android:id="@+id/editLanguage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Любимый язык программирования"/>
+
+        <SeekBar
+            android:id="@+id/seekLevel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="10"/>
+
+        <TextView
+            android:id="@+id/textLevel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Уровень Android: 0"/>
+
+        <Switch
+            android:id="@+id/switchKotlin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Использую Kotlin"/>
+
+        <Button
+            android:id="@+id/buttonSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Сохранить профиль"/>
+
+        <TextView
+            android:id="@+id/textData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Путь сохранения: data/data/mireaproject/shared_prefs"
+            android:textSize="18sp"
+            android:padding="16dp"/>
+
+    </LinearLayout>
+
+</ScrollView>

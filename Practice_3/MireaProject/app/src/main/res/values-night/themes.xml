@@ -1,7 +1,17 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.MireaProject" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+
+    <style name="Base.Theme.MireaProject"
+        parent="Theme.Material3.DayNight.NoActionBar">
+
+        <item name="popupMenuStyle">@style/PopupMenuStyle</item>
+
     </style>
+
+    <style name="PopupMenuStyle"
+        parent="Widget.AppCompat.PopupMenu">
+
+        <item name="android:textColor">@color/black</item>
+
+    </style>
+
 </resources>

@@ -13,15 +13,21 @@ import androidx.fragment.app.Fragment;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import android.content.Intent;
+
+import com.google.firebase.auth.FirebaseAuth;
+import android.view.Menu;
 
 public class MainActivity extends AppCompatActivity {
 
     NavigationView navView;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mAuth = FirebaseAuth.getInstance();
 
         navView = findViewById(R.id.nav_view);
 
@@ -44,6 +50,15 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else if (item.getItemId() == R.id.nav_hardware) {
                     selectedFragment = new HardwareFragment();
+                }
+                else if (item.getItemId() == R.id.nav_profile) {
+                    selectedFragment = new ProfileFragment();
+                }
+                else if (item.getItemId() == R.id.nav_notes) {
+                    selectedFragment = new NotesFragment();
+                }
+                else if (item.getItemId() == R.id.nav_network) {
+                    selectedFragment = new NetworkFragment();
                 }
 
                 if (selectedFragment != null) {
@@ -71,5 +86,39 @@ public class MainActivity extends AppCompatActivity {
 
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(
+                R.menu.main_menu,
+                menu
+        );
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        if (item.getItemId() == R.id.action_logout) {
+
+            mAuth.signOut();
+
+            Intent intent =
+                    new Intent(
+                            MainActivity.this,
+                            LoginActivity.class
+                    );
+
+            startActivity(intent);
+
+            finish();
+
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }
